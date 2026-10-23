@@ -71,6 +71,6 @@ $sky = imagecolorallocate($im, 140, 202, 245);
 imagettftext($im, 64, 0, 260, 190, $white, $font, 'Todo Acceso');
 imagettftext($im, 46, 0, 80, 360, $white, $font, '¿Un sitio o una app no funciona?');
 imagettftext($im, 46, 0, 80, 430, $sky, $font, 'Comprobá su estado en segundos.');
-imagettftext($im, 26, 0, 80, 550, $white, $font, 'Estado de sitios y apps en Argentina · todoacceso.com');
+imagettftext($im, 26, 0, 80, 550, $white, $font, 'Estado de sitios y apps en Argentina · todoacesso.com');
 imagepng($im, "$out/og-default.png", 9);
 echo "Listo.\n";

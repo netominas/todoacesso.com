@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 // Pruebas unitarias sin red ni servidor. Uso: php tests/run.php
 putenv('APP_KEY=' . str_repeat('k', 64));
-putenv('APP_URL=https://todoacceso.com');
+putenv('APP_URL=https://todoacesso.com');
 putenv('DB_PATH=storage/test-unit.sqlite');
 putenv('APP_ENV=local');
 @unlink(dirname(__DIR__) . '/storage/test-unit.sqlite');
@@ -61,7 +61,7 @@ $reject = [
     'whatsapp', 'instagram', 'banco', 'localhost', 'http://localhost/', '127.0.0.1', 'http://192.168.1.1/admin', '10.0.0.5',
     '[::1]', 'http://[::1]/', 'ftp://sitio.com', 'javascript:alert(1)', 'mailto:a@b.com', 'file:///etc/passwd', 'foo.local',
     'sitio.internal', 'example.test', 'a b.com', '', 'http://', 'user:pass@sitio.com', 'http://sitio.com:8080/', '.com', 'foo..com',
-    '-abc.com', 'abc-.com', 'sitio.cómo-no', 'todoacceso.com', 'www.todoacceso.com', '2130706433', 'sitio.123',
+    '-abc.com', 'abc-.com', 'sitio.cómo-no', 'todoacesso.com', 'www.todoacesso.com', '2130706433', 'sitio.123',
     str_repeat('a', 64) . '.com',
 ];
 foreach ($reject as $in) {

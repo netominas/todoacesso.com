@@ -14,7 +14,7 @@ foreach (['', '-wal', '-shm'] as $s) {
 }
 $adminPass = 'Prueba-Admin-2026!';
 $env = array_merge(getenv(), [
-    'APP_ENV' => 'production', 'APP_DEBUG' => '0', 'APP_URL' => 'https://todoacceso.com', 'APP_KEY' => str_repeat('z', 64),
+    'APP_ENV' => 'production', 'APP_DEBUG' => '0', 'APP_URL' => 'https://todoacesso.com', 'APP_KEY' => str_repeat('z', 64),
     'APP_AUTO_MIGRATE' => '1', 'DB_PATH' => 'storage/test-http.sqlite', 'GTM_ID' => 'GTM-TEST123',
     'ADMIN_USER' => 'tester', 'ADMIN_PASSWORD_HASH' => password_hash($adminPass, PASSWORD_BCRYPT, ['cost' => 8]),
     'REPORT_COOLDOWN_SECONDS' => '120', 'RL_SEARCH_PER_10MIN' => '200',
@@ -73,7 +73,7 @@ echo "# Home\n";
 $r = http('GET', '/');
 t('home 200', $r['code'] === 200);
 t('lang es-AR', str_contains($r['body'], '<html lang="es-AR">'));
-t('canonical absoluta', str_contains($r['body'], '<link rel="canonical" href="https://todoacceso.com/">'));
+t('canonical absoluta', str_contains($r['body'], '<link rel="canonical" href="https://todoacesso.com/">'));
 t('robots index con max-image-preview', str_contains($r['body'], 'content="index,follow,max-image-preview:large"'));
 t('og:image y twitter:image', str_contains($r['body'], 'property="og:image"') && str_contains($r['body'], 'name="twitter:image"'));
 t('JSON-LD WebSite + SearchAction + Organization', str_contains($r['body'], '"SearchAction"') && str_contains($r['body'], '"Organization"'));
@@ -108,7 +108,7 @@ echo "# Página de servicio\n";
 $r = http('GET', '/estado/wikipedia-org');
 t('servicio 200', $r['code'] === 200);
 t('H1 único', substr_count($r['body'], '<h1') === 1);
-t('canonical del servicio', str_contains($r['body'], 'rel="canonical" href="https://todoacceso.com/estado/wikipedia-org"'));
+t('canonical del servicio', str_contains($r['body'], 'rel="canonical" href="https://todoacesso.com/estado/wikipedia-org"'));
 t('servicio nuevo no indexable (noindex,follow)', str_contains($r['body'], 'content="noindex,follow"'));
 t('breadcrumb visible + JSON-LD', str_contains($r['body'], 'aria-label="Ruta de navegación"') && str_contains($r['body'], '"BreadcrumbList"'));
 t('FAQ visible y FAQPage', str_contains($r['body'], '"FAQPage"') && str_contains($r['body'], '<details>'));
@@ -171,11 +171,11 @@ t('privacidad cubre ubicación, hash, GTM, OSM y retención', str_contains($x['b
 $x = http('GET', '/sitemap.xml');
 $xml = @simplexml_load_string($x['body']);
 t('sitemap.xml válido', $xml !== false && $x['code'] === 200 && str_contains($x['headers'], 'application/xml'));
-t('sitemap incluye home, populares, legales', str_contains($x['body'], '<loc>https://todoacceso.com/</loc>') && str_contains($x['body'], '/servicios-populares') && str_contains($x['body'], '/privacidad') && str_contains($x['body'], '/terminos') && str_contains($x['body'], '/sobre-nosotros'));
+t('sitemap incluye home, populares, legales', str_contains($x['body'], '<loc>https://todoacesso.com/</loc>') && str_contains($x['body'], '/servicios-populares') && str_contains($x['body'], '/privacidad') && str_contains($x['body'], '/terminos') && str_contains($x['body'], '/sobre-nosotros'));
 t('sitemap excluye servicios no indexables', !str_contains($x['body'], 'wikipedia-org'));
 t('sitemap sin admin ni búsquedas', !str_contains($x['body'], '/admin') && !str_contains($x['body'], '/buscar'));
 $x = http('GET', '/robots.txt');
-t('robots.txt: bloquea /admin y declara sitemap', str_contains($x['body'], 'Disallow: /admin') && str_contains($x['body'], 'Sitemap: https://todoacceso.com/sitemap.xml'));
+t('robots.txt: bloquea /admin y declara sitemap', str_contains($x['body'], 'Disallow: /admin') && str_contains($x['body'], 'Sitemap: https://todoacesso.com/sitemap.xml'));
 $pop = http('GET', '/servicios-populares');
 t('ranking no lista servicios no indexables', !str_contains($pop['body'], 'wikipedia'));
 t('404 con página de error y noindex', ($y = http('GET', '/no-existe'))['code'] === 404 && str_contains($y['body'], 'noindex'));

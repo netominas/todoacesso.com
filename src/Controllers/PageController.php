@@ -43,7 +43,7 @@ final class PageController
         View::page($req, 'pages/' . $view, [
             'title' => $title,
             'crumbs' => [['Inicio', '/'], [$title, null]],
-            'contactEmail' => Env::str('CONTACT_EMAIL', 'contacto@todoacceso.com'),
+            'contactEmail' => Env::str('CONTACT_EMAIL', 'contacto@todoacesso.com'),
             'updated' => (int) filemtime(BASE_PATH . '/views/pages/' . $view . '.php'),
         ], $seo);
     }
