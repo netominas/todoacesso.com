@@ -4,7 +4,7 @@
  * @var array $related @var array $crumbs @var array $problemTypes @var string $token @var ?array $flash @var ?string $flashKey
  * @var bool $stale @var string $categoryLabel
  */
-use TodoAcceso\Core\View;
+use TodoAcesso\Core\View;
 
 $slug = $service['slug'];
 $name = $service['name'];
@@ -145,7 +145,7 @@ $official = 'https://' . $service['domain'] . '/';
   </section>
 
   <aside class="notice" aria-label="Aviso de independencia">
-    <strong>Aviso de independencia.</strong> Todo Acceso es un sitio independiente y no está afiliado, asociado ni patrocinado por <?= e($name) ?> ni por su titular. El nombre y el logotipo pertenecen a sus respectivos dueños y se muestran solo para identificar el servicio consultado. Para soporte o información oficial, visitá <a href="<?= e($official) ?>" target="_blank" rel="noopener noreferrer nofollow">el sitio oficial</a>.
+    <strong>Aviso de independencia.</strong> Todo Acesso es un sitio independiente y no está afiliado, asociado ni patrocinado por <?= e($name) ?> ni por su titular. El nombre y el logotipo pertenecen a sus respectivos dueños y se muestran solo para identificar el servicio consultado. Para soporte o información oficial, visitá <a href="<?= e($official) ?>" target="_blank" rel="noopener noreferrer nofollow">el sitio oficial</a>.
   </aside>
 
   <?php if ($related): ?>

@@ -1,4 +1,4 @@
-/* Todo Acceso — JavaScript sin dependencias. */
+/* Todo Acesso — JavaScript sin dependencias. */
 (function () {
   'use strict';
 

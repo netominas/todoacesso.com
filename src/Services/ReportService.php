@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace TodoAcceso\Services;
+namespace TodoAcesso\Services;
 
-use TodoAcceso\Core\Database as DB;
-use TodoAcceso\Core\Env;
-use TodoAcceso\Core\RateLimiter;
-use TodoAcceso\Core\Request;
+use TodoAcesso\Core\Database as DB;
+use TodoAcesso\Core\Env;
+use TodoAcesso\Core\RateLimiter;
+use TodoAcesso\Core\Request;
 
 final class ReportService
 {

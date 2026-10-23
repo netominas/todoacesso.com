@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace TodoAcceso\Services;
+namespace TodoAcesso\Services;
 
 /** Carga idempotente de los servicios iniciales. No pisa lo editado a mano. */
 final class Seeder

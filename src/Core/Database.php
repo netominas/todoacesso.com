@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace TodoAcceso\Core;
+namespace TodoAcesso\Core;
 
 use PDO;
 use RuntimeException;
@@ -30,7 +30,7 @@ final class Database
                 'mysql:host=%s;port=%d;dbname=%s;charset=utf8mb4',
                 Env::str('DB_HOST', '127.0.0.1'),
                 Env::int('DB_PORT', 3306),
-                Env::str('DB_NAME', 'todoacceso')
+                Env::str('DB_NAME', 'todoacesso')
             );
             $options[PDO::ATTR_EMULATE_PREPARES] = false;
             self::$pdo = new PDO($dsn, Env::str('DB_USER'), Env::str('DB_PASS'), $options);

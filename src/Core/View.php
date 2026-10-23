@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace TodoAcceso\Core;
+namespace TodoAcesso\Core;
 
 final class View
 {
@@ -41,7 +41,7 @@ final class View
     public static function error(Request $req, int $code, string $title, string $message): never
     {
         $seo = [
-            'title' => $title . ' | Todo Acceso',
+            'title' => $title . ' | Todo Acesso',
             'description' => $message,
             'robots' => 'noindex,follow',
             'canonical' => null,

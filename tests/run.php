@@ -9,19 +9,19 @@ putenv('APP_ENV=local');
 @unlink(dirname(__DIR__) . '/storage/test-unit.sqlite');
 require dirname(__DIR__) . '/src/bootstrap.php';
 
-use TodoAcceso\Core\Database as DB;
-use TodoAcceso\Core\Migrator;
-use TodoAcceso\Core\RateLimiter;
-use TodoAcceso\Core\Request;
-use TodoAcceso\Core\Security;
-use TodoAcceso\Services\ActivityData;
-use TodoAcceso\Services\DomainNormalizer;
-use TodoAcceso\Services\GeoRegions;
-use TodoAcceso\Services\HttpClient;
-use TodoAcceso\Services\ReportService;
-use TodoAcceso\Services\Seo;
-use TodoAcceso\Services\ServiceRepository;
-use TodoAcceso\Services\SsrfGuard;
+use TodoAcesso\Core\Database as DB;
+use TodoAcesso\Core\Migrator;
+use TodoAcesso\Core\RateLimiter;
+use TodoAcesso\Core\Request;
+use TodoAcesso\Core\Security;
+use TodoAcesso\Services\ActivityData;
+use TodoAcesso\Services\DomainNormalizer;
+use TodoAcesso\Services\GeoRegions;
+use TodoAcesso\Services\HttpClient;
+use TodoAcesso\Services\ReportService;
+use TodoAcesso\Services\Seo;
+use TodoAcesso\Services\ServiceRepository;
+use TodoAcesso\Services\SsrfGuard;
 
 $pass = 0;
 $fail = 0;
@@ -208,7 +208,7 @@ foreach (['GTM-ABC1234' => true, 'GTM-XXXXXXX' => true, 'GTM-' => false, 'gtm-ab
     t("GTM «{$id}» " .($valid ? 'válido' : 'inválido'), (Seo::gtmId() !== null) === $valid);
 }
 putenv('GTM_ID');
-t('title con sufijo si cabe', Seo::title('Corto') === 'Corto | Todo Acceso');
+t('title con sufijo si cabe', Seo::title('Corto') === 'Corto | Todo Acesso');
 t('title sin sufijo si es largo', Seo::title(str_repeat('a', 58)) === str_repeat('a', 58));
 $ld = Seo::graph([Seo::faq([['¿Q?', 'A']])]);
 t('JSON-LD FAQPage válido', json_decode($ld, true)['@graph'][0]['@type'] === 'FAQPage');
@@ -220,7 +220,7 @@ foreach (ServiceRepository::featured() as $s) {
     // sin servicios en la base de pruebas: se prueba con una ficha sintética
 }
 foreach (['whatsapp.com' => 'mensajeria', 'bna.com.ar' => 'banco', 'sitio-raro.com' => 'sitio'] as $d => $cat) {
-    $c = \TodoAcceso\Content\ServiceContent::build(['domain' => $d, 'name' => 'Nombre', 'category' => $cat, 'editorial' => '']);
+    $c = \TodoAcesso\Content\ServiceContent::build(['domain' => $d, 'name' => 'Nombre', 'category' => $cat, 'editorial' => '']);
     $words = str_word_count(strip_tags(implode(' ', array_merge($c['about'], $c['uses'], $c['interpret'], array_column($c['troubleshooting'], 1), array_column($c['faq'], 1)))));
     t("contenido de $d: título, FAQ y suficiente texto", $c['title'] !== '' && count($c['faq']) >= 4 && $words > 300, "palabras=$words");
 }

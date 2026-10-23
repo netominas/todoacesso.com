@@ -1,22 +1,22 @@
 <?php
 declare(strict_types=1);
 
-namespace TodoAcceso\Controllers;
+namespace TodoAcesso\Controllers;
 
-use TodoAcceso\Core\Env;
-use TodoAcceso\Core\Request;
-use TodoAcceso\Core\Response;
-use TodoAcceso\Core\View;
-use TodoAcceso\Services\Seo;
-use TodoAcceso\Services\ServiceRepository;
+use TodoAcesso\Core\Env;
+use TodoAcesso\Core\Request;
+use TodoAcesso\Core\Response;
+use TodoAcesso\Core\View;
+use TodoAcesso\Services\Seo;
+use TodoAcesso\Services\ServiceRepository;
 
 /** Páginas legales/institucionales, sitemap.xml y robots.txt. */
 final class PageController
 {
     private const PAGES = [
-        'sobre-nosotros' => ['Sobre Todo Acceso', 'about', 'Conocé Todo Acceso, la herramienta independiente para comprobar si sitios y aplicaciones funcionan en Argentina.'],
-        'privacidad' => ['Política de privacidad', 'privacy', 'Cómo trata Todo Acceso los datos: reportes anónimos, ubicación voluntaria y aproximada, cookies y servicios de terceros.'],
-        'terminos' => ['Términos y condiciones', 'terms', 'Condiciones de uso de Todo Acceso: información orientativa, verificaciones puntuales, independencia de las marcas y uso responsable.'],
+        'sobre-nosotros' => ['Sobre Todo Acesso', 'about', 'Conocé Todo Acesso, la herramienta independiente para comprobar si sitios y aplicaciones funcionan en Argentina.'],
+        'privacidad' => ['Política de privacidad', 'privacy', 'Cómo trata Todo Acesso los datos: reportes anónimos, ubicación voluntaria y aproximada, cookies y servicios de terceros.'],
+        'terminos' => ['Términos y condiciones', 'terms', 'Condiciones de uso de Todo Acesso: información orientativa, verificaciones puntuales, independencia de las marcas y uso responsable.'],
     ];
 
     public static function show(Request $req, string $slug): void
@@ -28,7 +28,7 @@ final class PageController
         [$title, $view, $description] = $page;
         $path = '/' . $slug;
         $seo = [
-            'title' => $title . ' | Todo Acceso',
+            'title' => $title . ' | Todo Acesso',
             'description' => $description,
             'canonical' => app_url($path),
             'robots' => 'index,follow,max-image-preview:large',

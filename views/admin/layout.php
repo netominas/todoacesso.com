@@ -1,6 +1,6 @@
 <?php
 /** @var array $seo @var string $content @var string $bodyClass */
-use TodoAcceso\Core\Auth;
+use TodoAcesso\Core\Auth;
 ?><!doctype html>
 <html lang="es-AR">
 <head>
@@ -15,7 +15,7 @@ use TodoAcceso\Core\Auth;
 <?php if (Auth::check()): ?>
 <header class="admin-bar">
   <div class="wrap">
-    <strong>Todo Acceso · Admin</strong>
+    <strong>Todo Acesso · Admin</strong>
     <a href="/admin">Panel</a>
     <a href="/admin/servicios">Servicios</a>
     <a href="/admin/destacados">Destacados</a>

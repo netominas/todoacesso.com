@@ -1,4 +1,4 @@
-# Todo Acceso
+# Todo Acesso
 
 Portal en PHP para comprobar si sitios, apps, bancos, operadoras y servicios online **funcionan en Argentina**, con reportes anónimos de la comunidad, gráfico de 24 h y mapa aproximado. Interfaz, contenido, metadatos y datos estructurados en **español rioplatense (es-AR)**. Dominio: <https://todoacesso.com>.
 
@@ -77,10 +77,10 @@ Title/description/H1/canonical únicos · `robots` correcto (fichas nuevas `noin
 ## Publicación en la VPS (Ubuntu/Debian)
 
 1. Paquetes: `apt install nginx php8.2-fpm php8.2-sqlite3 php8.2-curl php8.2-mbstring php8.2-gd php8.2-intl php8.2-xml git certbot`.
-2. Clonar en `/var/www/todoacceso` (rama `main`), crear `.env` desde `.env.example` con `APP_ENV=production`, `APP_DEBUG=0`, `APP_AUTO_MIGRATE=0`, **nueva** `APP_KEY`, nueva contraseña admin, `GTM_ID` del contenedor propio.
+2. Clonar en `/var/www/todoacesso` (rama `main`), crear `.env` desde `.env.example` con `APP_ENV=production`, `APP_DEBUG=0`, `APP_AUTO_MIGRATE=0`, **nueva** `APP_KEY`, nueva contraseña admin, `GTM_ID` del contenedor propio.
 3. `bash deploy/deploy.sh` (migra, ajusta permisos: código de solo lectura, `storage/` y `public/uploads/` escribibles por `www-data`, `.env` 640). Primera vez: `sudo -u www-data php bin/migrate.php --seed`.
-4. Nginx: copiar `deploy/nginx-http-bootstrap.conf`, emitir certificado `certbot certonly --webroot -w /var/www/letsencrypt -d todoacesso.com -d www.todoacesso.com -m EMAIL --agree-tos`, y luego instalar `deploy/nginx-todoacceso.conf` (www → apex, HTTPS, PHP-FPM, caché de estáticos, rate limit).
-5. Cron: `deploy/cron-todoacceso` → `/etc/cron.d/todoacceso`; logrotate: `deploy/logrotate-todoacceso`.
+4. Nginx: copiar `deploy/nginx-http-bootstrap.conf`, emitir certificado `certbot certonly --webroot -w /var/www/letsencrypt -d todoacesso.com -d www.todoacesso.com -m EMAIL --agree-tos`, y luego instalar `deploy/nginx-todoacesso.conf` (www → apex, HTTPS, PHP-FPM, caché de estáticos, rate limit).
+5. Cron: `deploy/cron-todoacesso` → `/etc/cron.d/todoacesso`; logrotate: `deploy/logrotate-todoacesso`.
 6. Validar: `/robots.txt`, `/sitemap.xml`, canonical, GTM, `curl -I https://todoacesso.com`. Enviar el sitemap a Search Console (propiedad propia).
 
 ## Notas y límites conocidos

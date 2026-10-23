@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace TodoAcceso\Core;
+namespace TodoAcesso\Core;
 
 /** Limitador de ventana fija almacenado en la base de datos. */
 final class RateLimiter

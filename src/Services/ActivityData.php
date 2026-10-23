@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace TodoAcceso\Services;
+namespace TodoAcesso\Services;
 
-use TodoAcceso\Core\Database as DB;
-use TodoAcceso\Core\Env;
+use TodoAcesso\Core\Database as DB;
+use TodoAcesso\Core\Env;
 
 /** Datos de las últimas 24 h: serie de 30 minutos, actividad habitual, distribución y regiones. */
 final class ActivityData

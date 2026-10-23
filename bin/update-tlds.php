@@ -4,7 +4,7 @@ declare(strict_types=1);
 // Actualiza resources/tlds.txt con la lista oficial de IANA. Ejecutar manualmente (p. ej. cada trimestre).
 require dirname(__DIR__) . '/src/bootstrap.php';
 
-$ctx = stream_context_create(['http' => ['timeout' => 15, 'user_agent' => 'TodoAcceso-tld-updater']]);
+$ctx = stream_context_create(['http' => ['timeout' => 15, 'user_agent' => 'TodoAcesso-tld-updater']]);
 $raw = @file_get_contents('https://data.iana.org/TLD/tlds-alpha-by-domain.txt', false, $ctx);
 if ($raw === false) {
     fwrite(STDERR, "No se pudo descargar la lista de IANA.\n");

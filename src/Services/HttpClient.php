@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace TodoAcceso\Services;
+namespace TodoAcesso\Services;
 
-use TodoAcceso\Core\Env;
+use TodoAcesso\Core\Env;
 
 /**
  * Cliente HTTP saliente seguro: resuelve y valida DNS en cada salto, fija la IP con CURLOPT_RESOLVE
@@ -13,11 +13,11 @@ final class HttpClient
 {
     public static function userAgent(): string
     {
-        $custom = trim(\TodoAcceso\Core\Env::str('CHECK_USER_AGENT'));
+        $custom = trim(\TodoAcesso\Core\Env::str('CHECK_USER_AGENT'));
         if ($custom !== '' && !preg_match('/[\r\n]/', $custom)) {
             return substr($custom, 0, 200);
         }
-        return 'TodoAccesoBot/1.0 (+' . app_url('/sobre-nosotros') . ')';
+        return 'TodoAcessoBot/1.0 (+' . app_url('/sobre-nosotros') . ')';
     }
 
     /**

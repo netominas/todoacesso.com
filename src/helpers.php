@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-use TodoAcceso\Core\Env;
+use TodoAcesso\Core\Env;
 
 const TZ_AR = 'America/Argentina/Buenos_Aires';
 
@@ -89,9 +89,9 @@ function service_icon(array $service, int $size = 48, bool $lazy = true): string
 
 function status_pill(?string $status): string
 {
-    $tone = \TodoAcceso\Services\Status::tone($status);
-    return '<span class="pill pill--' . $tone . '"><span aria-hidden="true">' . \TodoAcceso\Services\Status::icon($status) . '</span> '
-        . e(\TodoAcceso\Services\Status::label($status)) . '</span>';
+    $tone = \TodoAcesso\Services\Status::tone($status);
+    return '<span class="pill pill--' . $tone . '"><span aria-hidden="true">' . \TodoAcesso\Services\Status::icon($status) . '</span> '
+        . e(\TodoAcesso\Services\Status::label($status)) . '</span>';
 }
 
 function json_ld(array $data): string

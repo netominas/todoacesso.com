@@ -1,6 +1,6 @@
 <?php
-use TodoAcceso\Core\Auth;
-use TodoAcceso\Services\Status;
+use TodoAcesso\Core\Auth;
+use TodoAcesso\Services\Status;
 /** @var array $service @var int $reports @var ?string $iconUrl @var ?string $heroUrl @var array $categories @var ?array $flash */
 $id = (int) $service['id'];
 ?>

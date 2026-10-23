@@ -1,24 +1,24 @@
 <?php
 declare(strict_types=1);
 
-namespace TodoAcceso\Controllers;
+namespace TodoAcesso\Controllers;
 
-use TodoAcceso\Content\Categories;
-use TodoAcceso\Core\Auth;
-use TodoAcceso\Core\Database as DB;
-use TodoAcceso\Core\Request;
-use TodoAcceso\Core\Response;
-use TodoAcceso\Core\View;
-use TodoAcceso\Services\AvailabilityChecker;
-use TodoAcceso\Services\DomainNormalizer;
-use TodoAcceso\Services\ImageImporter;
-use TodoAcceso\Services\ServiceRepository;
+use TodoAcesso\Content\Categories;
+use TodoAcesso\Core\Auth;
+use TodoAcesso\Core\Database as DB;
+use TodoAcesso\Core\Request;
+use TodoAcesso\Core\Response;
+use TodoAcesso\Core\View;
+use TodoAcesso\Services\AvailabilityChecker;
+use TodoAcesso\Services\DomainNormalizer;
+use TodoAcesso\Services\ImageImporter;
+use TodoAcesso\Services\ServiceRepository;
 
 final class AdminController
 {
     private static function page(Request $req, string $view, array $data, string $title): never
     {
-        $seo = ['title' => $title . ' | Admin Todo Acceso', 'description' => '', 'robots' => 'noindex,nofollow', 'canonical' => null];
+        $seo = ['title' => $title . ' | Admin Todo Acesso', 'description' => '', 'robots' => 'noindex,nofollow', 'canonical' => null];
         $data['flash'] = Auth::flash();
         $data['bodyClass'] = 'is-admin';
         View::page($req, 'admin/' . $view, $data, $seo, 'admin/layout', 200, false);
@@ -41,7 +41,7 @@ final class AdminController
         if (Auth::check()) {
             Response::redirect('/admin', 303);
         }
-        $seo = ['title' => 'Ingresar | Admin Todo Acceso', 'description' => '', 'robots' => 'noindex,nofollow', 'canonical' => null];
+        $seo = ['title' => 'Ingresar | Admin Todo Acesso', 'description' => '', 'robots' => 'noindex,nofollow', 'canonical' => null];
         View::page($req, 'admin/login', ['error' => null, 'bodyClass' => 'is-admin'], $seo, 'admin/layout', 200, false);
     }
 
@@ -52,7 +52,7 @@ final class AdminController
         if ($error === null) {
             Response::redirect('/admin', 303);
         }
-        $seo = ['title' => 'Ingresar | Admin Todo Acceso', 'description' => '', 'robots' => 'noindex,nofollow', 'canonical' => null];
+        $seo = ['title' => 'Ingresar | Admin Todo Acesso', 'description' => '', 'robots' => 'noindex,nofollow', 'canonical' => null];
         View::page($req, 'admin/login', ['error' => $error, 'bodyClass' => 'is-admin'], $seo, 'admin/layout', 401, false);
     }
 
@@ -202,7 +202,7 @@ final class AdminController
         switch ($req->p('do')) {
             case 'recheck':
                 $res = AvailabilityChecker::check($service, true, false);
-                Auth::flash('Verificación realizada: ' . \TodoAcceso\Services\Status::label($res['service']['last_status']) . '.');
+                Auth::flash('Verificación realizada: ' . \TodoAcesso\Services\Status::label($res['service']['last_status']) . '.');
                 break;
             case 'import':
                 $overwrite = $req->p('overwrite') === '1';

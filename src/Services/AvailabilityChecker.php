@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace TodoAcceso\Services;
+namespace TodoAcesso\Services;
 
-use TodoAcceso\Core\Env;
-use TodoAcceso\Core\Logger;
+use TodoAcesso\Core\Env;
+use TodoAcesso\Core\Logger;
 
 final class AvailabilityChecker
 {

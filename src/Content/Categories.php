@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace TodoAcceso\Content;
+namespace TodoAcesso\Content;
 
 /**
  * Contenido editorial base por categoría. {n} = nombre del servicio, {d} = dominio.
@@ -38,7 +38,7 @@ final class Categories
             'sitio' => [
                 'kind' => 'sitio web',
                 'about' => [
-                    '{n} es un sitio web que se encuentra en {d}. En Todo Acceso comprobamos si el servidor responde y juntamos los reportes de otras personas para que puedas saber, en pocos segundos, si lo que te pasa le está pasando también a otros usuarios.',
+                    '{n} es un sitio web que se encuentra en {d}. En Todo Acesso comprobamos si el servidor responde y juntamos los reportes de otras personas para que puedas saber, en pocos segundos, si lo que te pasa le está pasando también a otros usuarios.',
                     'Esta página no pertenece a {n} ni está vinculada con la empresa: es una herramienta independiente de consulta.',
                 ],
                 'uses' => ['Acceder a los contenidos y funciones que ofrece {d}.', 'Consultar información, iniciar sesión o realizar trámites, según el tipo de sitio.'],
@@ -201,7 +201,7 @@ final class Categories
                 'kind' => 'organismo público',
                 'about' => [
                     '{n} es un organismo o servicio público que ofrece trámites y consultas por internet. Durante vencimientos o períodos de mucha demanda, los sitios oficiales pueden responder lento o dejar de funcionar por momentos.',
-                    'Todo Acceso es un sitio independiente y no tiene ninguna relación con el Estado. Para realizar trámites, usá siempre las direcciones y canales oficiales.',
+                    'Todo Acesso es un sitio independiente y no tiene ninguna relación con el Estado. Para realizar trámites, usá siempre las direcciones y canales oficiales.',
                 ],
                 'uses' => ['Realizar trámites y consultas en línea.', 'Descargar constancias y comprobantes.', 'Acceder con clave o aplicación oficial.'],
                 'platforms' => ['Sitio web oficial.', 'Aplicaciones oficiales para Android y iPhone, cuando existen.'],

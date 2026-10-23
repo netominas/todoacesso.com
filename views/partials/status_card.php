@@ -1,6 +1,6 @@
 <?php
 /** @var array $service @var array $activity @var bool $stale */
-use TodoAcceso\Services\Status;
+use TodoAcesso\Services\Status;
 
 $status = $service['last_status'];
 $tone = Status::tone($status);

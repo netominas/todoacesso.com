@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace TodoAcceso\Core;
+namespace TodoAcesso\Core;
 
 /** Sesión administrativa segura + CSRF + protección contra fuerza bruta. */
 final class Auth

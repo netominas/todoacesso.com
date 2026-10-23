@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace TodoAcceso\Services;
+namespace TodoAcesso\Services;
 
-use TodoAcceso\Core\Env;
+use TodoAcesso\Core\Env;
 
 /** Metadatos SEO y datos estructurados JSON-LD. */
 final class Seo
 {
-    public const SITE = 'Todo Acceso';
+    public const SITE = 'Todo Acesso';
 
     public static function gtmId(): ?string
     {

@@ -1,4 +1,4 @@
-<?php use TodoAcceso\Core\Auth; /** @var array $rows @var ?array $flash */ ?>
+<?php use TodoAcesso\Core\Auth; /** @var array $rows @var ?array $flash */ ?>
 <h1>Destacados de la home</h1>
 <?php if ($flash): ?><p class="alert alert--<?= e($flash[0]) ?>"><?= e($flash[1]) ?></p><?php endif; ?>
 <p class="muted">Los servicios se muestran en la home de menor a mayor número de orden. Para quitar o agregar destacados, editá el servicio.</p>

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace TodoAcceso\Core;
+namespace TodoAcesso\Core;
 
 /** Log simple a archivo. No se registran IP crudas ni contenido de formularios. */
 final class Logger

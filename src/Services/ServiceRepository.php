@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace TodoAcceso\Services;
+namespace TodoAcesso\Services;
 
-use TodoAcceso\Core\Database as DB;
+use TodoAcesso\Core\Database as DB;
 
 final class ServiceRepository
 {

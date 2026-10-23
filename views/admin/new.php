@@ -1,4 +1,4 @@
-<?php use TodoAcceso\Core\Auth; /** @var ?string $error @var string $value */ ?>
+<?php use TodoAcesso\Core\Auth; /** @var ?string $error @var string $value */ ?>
 <h1>Nuevo servicio</h1>
 <?php if ($error): ?><p class="alert alert--error" role="alert"><?= e($error) ?></p><?php endif; ?>
 <form method="post" action="/admin/servicios/nuevo" class="card form-grid" style="max-width:560px">

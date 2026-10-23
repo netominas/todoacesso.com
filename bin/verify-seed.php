@@ -4,7 +4,7 @@ declare(strict_types=1);
 // Comprueba que los dominios del seed respondan y muestra a dónde redirigen (para confirmar dominios oficiales).
 require dirname(__DIR__) . '/src/bootstrap.php';
 
-use TodoAcceso\Services\HttpClient;
+use TodoAcesso\Services\HttpClient;
 
 $seed = require BASE_PATH . '/config/services_seed.php';
 printf("%-28s %-6s %-6s %s\n", 'DOMINIO', 'HTTP', 'MS', 'DESTINO FINAL / ERROR');

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace TodoAcceso\Services;
+namespace TodoAcesso\Services;
 
 /** Protección SSRF: solo se conectan hosts cuyas IPs resueltas son todas públicas. */
 final class SsrfGuard

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace TodoAcceso\Core;
+namespace TodoAcesso\Core;
 
 final class Response
 {
@@ -48,6 +48,6 @@ final class Response
 
     public static function notFound(Request $req): never
     {
-        View::error($req, 404, 'Página no encontrada', 'No encontramos lo que buscabas. Quizás el enlace cambió o el servicio todavía no está en Todo Acceso.');
+        View::error($req, 404, 'Página no encontrada', 'No encontramos lo que buscabas. Quizás el enlace cambió o el servicio todavía no está en Todo Acesso.');
     }
 }

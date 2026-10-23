@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace TodoAcceso\Services;
+namespace TodoAcesso\Services;
 
 /**
  * Validación geográfica gruesa (polígono aproximado de Argentina) y asignación de cada reporte

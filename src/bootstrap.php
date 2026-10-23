@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-use TodoAcceso\Core\Database;
-use TodoAcceso\Core\Env;
-use TodoAcceso\Core\Logger;
+use TodoAcesso\Core\Database;
+use TodoAcesso\Core\Env;
+use TodoAcesso\Core\Logger;
 
 define('BASE_PATH', dirname(__DIR__));
 
 spl_autoload_register(static function (string $class): void {
-    $prefix = 'TodoAcceso\\';
+    $prefix = 'TodoAcesso\\';
     if (strncmp($class, $prefix, strlen($prefix)) !== 0) {
         return;
     }
@@ -40,7 +40,7 @@ set_error_handler(static function (int $no, string $str, string $file, int $line
 
 if (Env::bool('APP_AUTO_MIGRATE', false)) {
     try {
-        \TodoAcceso\Core\Migrator::run(Database::pdo());
+        \TodoAcesso\Core\Migrator::run(Database::pdo());
     } catch (Throwable $e) {
         Logger::error('migration_failed', ['error' => $e->getMessage()]);
         throw $e;

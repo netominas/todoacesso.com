@@ -11,15 +11,15 @@ if (PHP_SAPI === 'cli-server') {
 
 require dirname(__DIR__) . '/src/bootstrap.php';
 
-use TodoAcceso\Controllers\AdminController;
-use TodoAcceso\Controllers\PageController;
-use TodoAcceso\Controllers\PublicController;
-use TodoAcceso\Core\Env;
-use TodoAcceso\Core\Logger;
-use TodoAcceso\Core\Request;
-use TodoAcceso\Core\Response;
-use TodoAcceso\Core\Router;
-use TodoAcceso\Core\View;
+use TodoAcesso\Controllers\AdminController;
+use TodoAcesso\Controllers\PageController;
+use TodoAcesso\Controllers\PublicController;
+use TodoAcesso\Core\Env;
+use TodoAcesso\Core\Logger;
+use TodoAcesso\Core\Request;
+use TodoAcesso\Core\Response;
+use TodoAcesso\Core\Router;
+use TodoAcesso\Core\View;
 
 $req = Request::fromGlobals();
 

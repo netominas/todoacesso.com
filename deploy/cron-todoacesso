@@ -1,0 +1,2 @@
+# /etc/cron.d/todoacesso — reverifica destacados cada 10 minutos y purga datos viejos.
+*/10 * * * * www-data /usr/bin/php /var/www/todoacesso/bin/check-featured.php >> /var/log/todoacesso-cron.log 2>&1

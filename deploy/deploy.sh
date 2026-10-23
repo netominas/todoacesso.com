@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Actualiza Todo Acceso en el servidor. Ejecutar como root (o con sudo) desde /var/www/todoacceso.
+# Actualiza Todo Acesso en el servidor. Ejecutar como root (o con sudo) desde /var/www/todoacesso.
 set -euo pipefail
-APP_DIR="${APP_DIR:-/var/www/todoacceso}"
+APP_DIR="${APP_DIR:-/var/www/todoacesso}"
 WEB_USER="${WEB_USER:-www-data}"
 cd "$APP_DIR"
 

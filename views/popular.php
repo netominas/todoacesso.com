@@ -1,9 +1,9 @@
 <?php /** @var array $rows @var int $total @var int $page @var int $pages @var int $perPage @var array $crumbs */ ?>
 <div class="wrap">
-  <?= \TodoAcceso\Core\View::partial('partials/breadcrumbs', ['crumbs' => $crumbs]) ?>
+  <?= \TodoAcesso\Core\View::partial('partials/breadcrumbs', ['crumbs' => $crumbs]) ?>
   <header class="page-head">
     <h1>Servicios más consultados en Argentina</h1>
-    <p class="lead">Ranking según la cantidad de búsquedas en Todo Acceso. Elegí un servicio para ver su estado actual, el gráfico de reportes y el mapa de actividad.</p>
+    <p class="lead">Ranking según la cantidad de búsquedas en Todo Acesso. Elegí un servicio para ver su estado actual, el gráfico de reportes y el mapa de actividad.</p>
   </header>
 
   <?php if (!$rows): ?>

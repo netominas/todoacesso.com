@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 /**
- * Esquema de Todo Acceso. Marcadores: {PK}, {ENGINE}, {INT}, {BIGINT} (ver Migrator).
+ * Esquema de Todo Acesso. Marcadores: {PK}, {ENGINE}, {INT}, {BIGINT} (ver Migrator).
  * Las fechas son timestamps Unix en UTC.
  */
 return [

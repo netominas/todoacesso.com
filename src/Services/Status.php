@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace TodoAcceso\Services;
+namespace TodoAcesso\Services;
 
 /** Estados posibles de una verificación y su texto en español rioplatense. */
 final class Status

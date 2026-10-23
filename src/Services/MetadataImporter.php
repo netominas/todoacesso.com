@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace TodoAcceso\Services;
+namespace TodoAcesso\Services;
 
 use DOMDocument;
 use DOMXPath;
-use TodoAcceso\Core\Env;
+use TodoAcesso\Core\Env;
 
 /** Extrae descripción, nombre e imágenes declaradas en el HTML de la página principal. */
 final class MetadataImporter

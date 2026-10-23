@@ -1,10 +1,10 @@
 <?php /** @var array $crumbs @var string $contactEmail @var int $updated */ ?>
 <div class="wrap narrow">
-  <?= \TodoAcceso\Core\View::partial('partials/breadcrumbs', ['crumbs' => $crumbs]) ?>
+  <?= \TodoAcesso\Core\View::partial('partials/breadcrumbs', ['crumbs' => $crumbs]) ?>
   <article class="prose">
     <h1>Política de privacidad</h1>
     <p class="muted">Última actualización: <?= e((new DateTimeImmutable('@' . $updated))->setTimezone(new DateTimeZone(TZ_AR))->format('d/m/Y')) ?></p>
-    <p class="lead">En Todo Acceso recolectamos la menor cantidad de datos posible. No hay registro de usuarios y no vendemos información personal. Acá te explicamos qué pasa con cada dato.</p>
+    <p class="lead">En Todo Acesso recolectamos la menor cantidad de datos posible. No hay registro de usuarios y no vendemos información personal. Acá te explicamos qué pasa con cada dato.</p>
 
     <h2 id="busquedas">Dominios que buscás</h2>
     <p>Cuando consultás un dominio, lo normalizamos (sin protocolo, sin "www" y sin rutas ni parámetros) y sumamos una consulta al contador del servicio. Ese contador es una métrica agregada: no la asociamos con tu identidad.</p>

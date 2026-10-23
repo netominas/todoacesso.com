@@ -1,24 +1,24 @@
 <?php
 declare(strict_types=1);
 
-namespace TodoAcceso\Controllers;
+namespace TodoAcesso\Controllers;
 
-use TodoAcceso\Content\Categories;
-use TodoAcceso\Content\ServiceContent;
-use TodoAcceso\Core\Database as DB;
-use TodoAcceso\Core\Env;
-use TodoAcceso\Core\Logger;
-use TodoAcceso\Core\RateLimiter;
-use TodoAcceso\Core\Request;
-use TodoAcceso\Core\Response;
-use TodoAcceso\Core\Security;
-use TodoAcceso\Core\View;
-use TodoAcceso\Services\ActivityData;
-use TodoAcceso\Services\AvailabilityChecker;
-use TodoAcceso\Services\DomainNormalizer;
-use TodoAcceso\Services\ReportService;
-use TodoAcceso\Services\Seo;
-use TodoAcceso\Services\ServiceRepository;
+use TodoAcesso\Content\Categories;
+use TodoAcesso\Content\ServiceContent;
+use TodoAcesso\Core\Database as DB;
+use TodoAcesso\Core\Env;
+use TodoAcesso\Core\Logger;
+use TodoAcesso\Core\RateLimiter;
+use TodoAcesso\Core\Request;
+use TodoAcesso\Core\Response;
+use TodoAcesso\Core\Security;
+use TodoAcesso\Core\View;
+use TodoAcesso\Services\ActivityData;
+use TodoAcesso\Services\AvailabilityChecker;
+use TodoAcesso\Services\DomainNormalizer;
+use TodoAcesso\Services\ReportService;
+use TodoAcesso\Services\Seo;
+use TodoAcesso\Services\ServiceRepository;
 
 final class PublicController
 {
@@ -36,7 +36,7 @@ final class PublicController
         $featured = ServiceRepository::featured(24);
         $error = $req->q('e') === 'rate' ? 'Hiciste muchas consultas seguidas. Esperá unos minutos e intentá de nuevo.' : null;
         $seo = [
-            'title' => 'Todo Acceso: ¿está caído? Comprobá el estado de sitios y apps en Argentina',
+            'title' => 'Todo Acesso: ¿está caído? Comprobá el estado de sitios y apps en Argentina',
             'description' => 'Comprobá en segundos si un sitio o una app funciona en Argentina. Estado, tiempo de respuesta y reportes de usuarios de WhatsApp, Instagram, ChatGPT, bancos y más.',
             'canonical' => app_url('/'),
             'robots' => 'index,follow,max-image-preview:large',
@@ -44,7 +44,7 @@ final class PublicController
             'jsonld' => Seo::graph([
                 Seo::organization(),
                 Seo::website(),
-                Seo::pageNode('/', 'Todo Acceso: comprobá el estado de sitios y apps en Argentina', 'Comprobá en segundos si un sitio o una app funciona en Argentina.'),
+                Seo::pageNode('/', 'Todo Acesso: comprobá el estado de sitios y apps en Argentina', 'Comprobá en segundos si un sitio o una app funciona en Argentina.'),
             ]),
         ];
         View::page($req, 'home', ['featured' => $featured, 'error' => $error, 'query' => '', 'bodyClass' => 'is-home'], $seo);
@@ -88,7 +88,7 @@ final class PublicController
     private static function searchError(Request $req, string $raw, string $message, int $code): never
     {
         $seo = [
-            'title' => 'Todo Acceso: comprobá el estado de sitios y apps en Argentina',
+            'title' => 'Todo Acesso: comprobá el estado de sitios y apps en Argentina',
             'description' => 'Comprobá en segundos si un sitio o una app funciona en Argentina.',
             'canonical' => app_url('/'),
             'robots' => 'noindex,follow',
@@ -151,7 +151,7 @@ final class PublicController
             'canonical' => app_url($path),
             'robots' => $service['indexable'] ? 'index,follow,max-image-preview:large' : 'noindex,follow',
             'image' => $ogImage,
-            'image_alt' => 'Estado de ' . $service['name'] . ' en Todo Acceso',
+            'image_alt' => 'Estado de ' . $service['name'] . ' en Todo Acesso',
             'type' => 'article',
             'jsonld' => Seo::graph($nodes),
         ];
@@ -262,15 +262,15 @@ final class PublicController
         }
         $canonical = app_url('/servicios-populares') . ($page > 1 ? '?pagina=' . $page : '');
         $seo = [
-            'title' => 'Servicios más consultados en Argentina' . ($page > 1 ? ' (página ' . $page . ')' : '') . ' | Todo Acceso',
-            'description' => 'Ranking de los sitios y aplicaciones más consultados en Todo Acceso: estado actual, tiempo de respuesta y acceso rápido a cada servicio.',
+            'title' => 'Servicios más consultados en Argentina' . ($page > 1 ? ' (página ' . $page . ')' : '') . ' | Todo Acesso',
+            'description' => 'Ranking de los sitios y aplicaciones más consultados en Todo Acesso: estado actual, tiempo de respuesta y acceso rápido a cada servicio.',
             'canonical' => $canonical,
             'robots' => 'index,follow,max-image-preview:large',
             'image' => Seo::defaultImage(),
             'jsonld' => Seo::graph([
                 Seo::organization(),
                 Seo::website(),
-                Seo::pageNode('/servicios-populares', 'Servicios más consultados en Argentina', 'Ranking de los servicios más consultados en Todo Acceso.'),
+                Seo::pageNode('/servicios-populares', 'Servicios más consultados en Argentina', 'Ranking de los servicios más consultados en Todo Acesso.'),
                 Seo::breadcrumbs([['Inicio', '/'], ['Servicios populares', '/servicios-populares']]),
             ]),
             'prev' => $page > 1 ? app_url('/servicios-populares') . ($page > 2 ? '?pagina=' . ($page - 1) : '') : null,

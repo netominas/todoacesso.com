@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace TodoAcceso\Services;
+namespace TodoAcesso\Services;
 
-use TodoAcceso\Core\Logger;
+use TodoAcesso\Core\Logger;
 
 /** Ejecuta tareas pesadas (descarga de imágenes) después de enviar la respuesta al visitante. */
 final class Deferred

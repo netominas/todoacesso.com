@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace TodoAcceso\Content;
+namespace TodoAcesso\Content;
 
 /**
  * Arma el contenido editorial de la página de un servicio: plantilla por categoría + textos específicos
@@ -91,7 +91,7 @@ final class ServiceContent
             ['Quiénes lo notan', 'Solo vos o personas de tu red.', 'Muchos usuarios en distintas ciudades y operadoras.'],
             ['Otros sitios', 'También fallan o van lentos.', 'Funcionan con normalidad.'],
             ['Otro dispositivo o red', 'Con datos móviles o en otro equipo ' . $n . ' anda.', 'Falla en todos los dispositivos y redes.'],
-            ['Reportes en Todo Acceso', 'Pocos o ninguno.', 'Aumento marcado respecto de la actividad habitual.'],
+            ['Reportes en Todo Acesso', 'Pocos o ninguno.', 'Aumento marcado respecto de la actividad habitual.'],
             ['Qué hacer', 'Reiniciá el router, cambiá de red o actualizá la app.', 'Esperar y reintentar más tarde; la solución depende del servicio.'],
         ];
     }
@@ -103,7 +103,7 @@ final class ServiceContent
             ['¿Cómo sé si ' . $n . ' está caído para todos o solo para mí?', 'Mirá el estado de arriba y el gráfico de reportes. Si hay un aumento claro de reportes en distintas zonas, es probable que la falla sea general. Si casi nadie reporta, probá los pasos de esta página: suele ser un problema de tu conexión, tu dispositivo o tu cuenta.'],
             ['¿Por qué el estado dice que el servidor responde pero a mí no me funciona?', 'Nuestra verificación comprueba que el servidor devuelva una respuesta, pero no puede revisar cada función ni iniciar sesión con una cuenta. Un servicio puede responder y, aun así, tener fallas parciales, o ser inaccesible para tu zona u operadora.'],
             ['¿Los reportes son oficiales?', 'No. Son enviados de forma anónima por personas que usan ' . $n . ' y no están verificados. Sirven como indicio de lo que está pasando, no como confirmación oficial.'],
-            ['¿Todo Acceso está relacionado con ' . $n . '?', 'No. Todo Acceso es un sitio independiente y no tiene vínculo con ' . $n . ' ni con su empresa. Las marcas pertenecen a sus respectivos titulares.'],
+            ['¿Todo Acesso está relacionado con ' . $n . '?', 'No. Todo Acesso es un sitio independiente y no tiene vínculo con ' . $n . ' ni con su empresa. Las marcas pertenecen a sus respectivos titulares.'],
         ];
     }
 
@@ -176,7 +176,7 @@ final class ServiceContent
                 ],
                 'faq' => [
                     ['¿Por qué ChatGPT dice "Something went wrong"?', 'Es un error genérico. Recargá la página, iniciá un chat nuevo o cerrá y abrí sesión. Si muchos usuarios lo reportan acá al mismo tiempo, es una falla del servicio.'],
-                    ['¿ChatGPT tiene una página oficial de estado?', 'Sí, OpenAI publica el estado de sus servicios en status.openai.com. Es la fuente oficial; Todo Acceso complementa con reportes de usuarios en Argentina.'],
+                    ['¿ChatGPT tiene una página oficial de estado?', 'Sí, OpenAI publica el estado de sus servicios en status.openai.com. Es la fuente oficial; Todo Acesso complementa con reportes de usuarios en Argentina.'],
                     ['¿Por qué ChatGPT va lento a veces?', 'La demanda varía durante el día. En horarios de mucho uso o ante fallas parciales, las respuestas pueden demorar más.'],
                 ],
                 'official_note' => 'La información oficial sobre el estado del servicio la publica OpenAI en status.openai.com.',
@@ -201,7 +201,7 @@ final class ServiceContent
                 'faq' => [
                     ['¿Por qué Mercado Libre no me deja pagar?', 'Puede ser un problema del medio de pago, de la conexión o del servicio. Probá otro medio, revisá la conexión y consultá si otros usuarios reportan problemas de pagos acá.'],
                     ['¿Qué hago si Mercado Libre no carga en la aplicación?', 'Cerrá y abrí la app, actualizala o limpiá la caché. Si el sitio web tampoco abre desde otra red, es probable que sea una falla general.'],
-                    ['¿Mercado Libre y Mercado Pago son lo mismo?', 'Son servicios distintos del mismo grupo. Podés consultar el estado de Mercado Pago en su propia página dentro de Todo Acceso.'],
+                    ['¿Mercado Libre y Mercado Pago son lo mismo?', 'Son servicios distintos del mismo grupo. Podés consultar el estado de Mercado Pago en su propia página dentro de Todo Acesso.'],
                 ],
             ],
             'mercadopago.com.ar' => [
@@ -257,7 +257,7 @@ final class ServiceContent
                 ],
                 'faq' => [
                     ['¿Cómo sé si el home banking del Banco Nación está en mantenimiento?', 'El banco suele avisar las ventanas de mantenimiento en su sitio o en su aplicación. Consultá siempre sus canales oficiales para confirmarlo.'],
-                    ['¿Esta página es del Banco Nación?', 'No. Todo Acceso es independiente del Banco de la Nación Argentina. Para operar, usá solamente las direcciones y la aplicación oficiales del banco.'],
+                    ['¿Esta página es del Banco Nación?', 'No. Todo Acesso es independiente del Banco de la Nación Argentina. Para operar, usá solamente las direcciones y la aplicación oficiales del banco.'],
                 ],
             ],
             'netflix.com' => [

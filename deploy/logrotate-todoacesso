@@ -1,0 +1,10 @@
+# /etc/logrotate.d/todoacesso — rota logs de la aplicación (retención corta, sin datos sensibles).
+/var/www/todoacesso/storage/logs/*.log /var/log/todoacesso-cron.log {
+    weekly
+    rotate 2
+    missingok
+    notifempty
+    compress
+    delaycompress
+    create 0640 www-data www-data
+}
