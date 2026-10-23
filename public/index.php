@@ -42,6 +42,17 @@ set_exception_handler(static function (Throwable $e) use ($req): void {
     }
 });
 
+// Host canónico (sin www) y HTTPS obligatorio opcional. Solo para el dominio configurado en APP_URL.
+$appHost = strtolower((string) parse_url(Env::str('APP_URL'), PHP_URL_HOST));
+$reqHost = strtolower((string) preg_replace('/:\d+$/', '', (string) ($_SERVER['HTTP_HOST'] ?? '')));
+$uri = (string) ($_SERVER['REQUEST_URI'] ?? '/');
+if (!Env::isLocal() && $appHost !== '' && $reqHost === 'www.' . $appHost) {
+    Response::redirect(app_url($uri), 301);
+}
+if (Env::bool('APP_FORCE_HTTPS', false) && $reqHost === $appHost && !$req->isHttps()) {
+    Response::redirect(app_url($uri), 301);
+}
+
 // Rutas con barra final o mayúsculas en secciones fijas: redirección permanente a la versión canónica.
 $path = $req->path;
 if ($path !== '/' && str_ends_with($path, '/')) {
